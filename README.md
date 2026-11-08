@@ -268,3 +268,4 @@ Potential next steps include production data connectors, richer forecasting mode
 ## Disclaimer
 
 This is a proof-of-concept inventory decision-support system. Forecasts and purchasing recommendations should be reviewed before operational use.
+# Inventory-Intelligence
