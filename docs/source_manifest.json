@@ -1,0 +1,22 @@
+{
+  "project": "YottaFlex Inventory Intelligence",
+  "data_type": "synthetic",
+  "external_data_sources": [],
+  "generator": "src/generate_data.py",
+  "configuration": "config/settings.yaml",
+  "database": "data/yottaflex.duckdb",
+  "description": "Synthetic retail inventory and demand data generated locally for a reproducible proof of concept.",
+  "scenario": {
+    "sku_count": 50,
+    "store_count": 5,
+    "supplier_count": 10,
+    "history_days": 90,
+    "start_date": "2026-01-01",
+    "random_seed": 20261022
+  },
+  "limitations": [
+    "No real retailer or customer data was used.",
+    "Synthetic demand patterns may not represent real operational conditions.",
+    "Results have not been validated against production data."
+  ]
+}
