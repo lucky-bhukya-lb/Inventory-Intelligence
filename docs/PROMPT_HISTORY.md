@@ -34,3 +34,47 @@ ChatGPT was used substantially for implementation guidance, debugging, and docum
 The original prompts should be supplied separately or appended as a redacted transcript to satisfy the challenge's explicit prompt-history requirement.
 
 No passwords, access tokens, or private credentials should be included in the submitted materials.
+
+## Selected Verbatim User Prompts From Development Verification
+
+The following are actual user messages from the ChatGPT conversation,
+preserved as examples of AI-assisted debugging and verification.
+This is a selected excerpt, not the complete conversation history.
+
+### Prompt 1 — Fresh-clone data generation failure
+
+```text
+python -m src.generate_data
+
+Generating YottaFlex master data...
+Generating supplier-SKU relationships...
+Generating 90 days of daily demand...
+Simulating inventory and stockouts...
+Generating supplier lead-time observations...
+
+_duckdb.CatalogException: Catalog Error:
+Table with name SalesHistory does not exist!
+
+Prompt 2 — Forecast output directory failure
+python -m src.forecast
+
+Loading sales history...
+Generating demand forecasts...
+
+OSError: Cannot save file into a non-existent directory:
+'outputs/forecasts'
+
+
+Prompt 3 — Forecasting verification
+python -m src.forecast
+
+Forecast rows: 3500
+Forecast saved to: outputs/forecasts/baseline_forecast.csv
+
+Prompt 4 — Automated testing
+27 passed in 10.95s
+
+Prompt 5 — Git whitespace verification
+git diff --check
+src/forecast.py:91: trailing whitespace.
+src/forecast.py:95: trailing whitespace.
