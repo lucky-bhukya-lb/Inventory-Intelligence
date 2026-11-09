@@ -1,6 +1,6 @@
 
 import pandas as pd
-
+from pathlib import Path
 from src.database import get_connection, load_config
 
 
@@ -251,9 +251,16 @@ def main():
         ],
     )
 
+    # output_path = (
+    #     "outputs/recommendations/replenishment.csv"
+    # )
+
+    # recommendations.to_csv(output_path, index=False)
     output_path = (
-        "outputs/recommendations/replenishment.csv"
-    )
+    "outputs/recommendations/replenishment.csv"
+)
+
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
 
     recommendations.to_csv(output_path, index=False)
 

@@ -1,6 +1,6 @@
 
 import pandas as pd
-
+from pathlib import Path
 from src.database import get_connection, load_config
 
 
@@ -83,9 +83,16 @@ def main():
         horizon_days=horizon_days,
     )
 
+    # output_path = "outputs/forecasts/baseline_forecast.csv"
+
+    # forecasts.to_csv(output_path, index=False)
     output_path = "outputs/forecasts/baseline_forecast.csv"
 
+
+    Path(output_path).parent.mkdir(parents=True, exist_ok=True)
+
     forecasts.to_csv(output_path, index=False)
+
 
     print(f"Forecast rows: {len(forecasts)}")
     print(f"Forecast saved to: {output_path}")
